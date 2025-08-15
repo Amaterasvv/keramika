@@ -15,35 +15,36 @@
   <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
 
   <!-- Header / Navigacija -->
-  <header class="site-header fade-in">
+  <header class="site-header ">
     <div class="container nav-wrapper">
       <a href="#" class="logo" aria-label="Početna — Keramika Zagreb">
         <span class="logo-mark">KZ</span>
         <span class="logo-text">Keramika Zagreb</span>
       </a>
 
-      <button class="nav-toggle" aria-expanded="false" aria-label="Otvori izbornik">
-        <span class="hamb-line" aria-hidden="true"></span>
-        <span class="hamb-line" aria-hidden="true"></span>
-        <span class="hamb-line" aria-hidden="true"></span>
-      </button>
+<button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Otvori izbornik">
+  <span class="hamb-line" aria-hidden="true"></span>
+  <span class="hamb-line" aria-hidden="true"></span>
+  <span class="hamb-line" aria-hidden="true"></span>
+</button>
 
-      <nav class="site-nav" aria-label="Glavna navigacija">
-        <ul>
-          <li><a href="#sto-radimo">Što radimo</a></li>
-          <li><a href="#kolekcije">Kolekcije</a></li>
-          <li><a href="#o-nama">O nama</a></li>
-          <li><a href="#projekti">Projekti</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
-      </nav>
+<nav id="primary-nav" class="site-nav" aria-label="Glavna navigacija">
+  <ul>
+    <li><a href="#sto-radimo">Što radimo</a></li>
+    <li><a href="#kolekcije">Kolekcije</a></li>
+    <li><a href="#o-nama">O nama</a></li>
+    <li><a href="#projekti">Projekti</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+</nav>
+
     </div>
   </header>
 
   <main id="sadrzaj">
 
     <!-- HERO -->
-    <section class="hero fade-in" aria-label="Hero">
+    <section class="hero " aria-label="Hero">
       <picture>
         <img src="slike/heror.jpg" alt="Moderne keramičke pločice u interijeru" width="1920" height="1080" loading="eager">
       </picture>
@@ -60,7 +61,7 @@
     </section>
 
     <!-- ŠTO RADIMO -->
-    <section id="sto-radimo" class="section section-light fade-in">
+    <section id="sto-radimo" class="section section-light fade-in cv">
       <div class="container">
         <header class="section-head">
           <h2>Što radimo</h2>
@@ -96,7 +97,7 @@
     </section>
 
     <!-- KOLEKCIJE -->
-    <section id="kolekcije" class="section fade-in">
+    <section id="kolekcije" class="section fade-in cv">
   <div class="container">
     <header class="section-head fade-in">
       <h2>Istaknute kolekcije</h2>
@@ -156,7 +157,7 @@
     </section>
 
     <!-- O NAMA -->
-    <section id="o-nama" class="section section-light fade-in">
+    <section id="o-nama" class="section section-light fade-in cv">
       <div class="container split">
         <div class="split-media">
           <img src="slike/onama.jpg" alt="Showroom i uzorci pločica" loading="lazy" width="1400" height="900">
@@ -216,13 +217,19 @@
           <p><strong>Telefon:</strong> <a href="tel:+38510000000">+385 1 000 0000</a></p>
           <p><strong>Email:</strong> <a href="mailto:info@keramikazagreb.hr">info@keramikazagreb.hr</a></p>
           <div class="contact-actions">
-            <a class="btn btn-secondary" href="#">WhatsApp</a>
-            <a class="btn btn-ghost" href="https://web.whatsapp.com/">Upute do showrooma</a>
+            <a class="btn btn-secondary" href="https://whatsapp.com/">WhatsApp</a>
+            <a class="btn btn-ghost" href="https://whatsapp.com/">Upute do showrooma</a>
           </div>
         </div>
-        <div class="split-media">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d88941.48516228913!2d15.881963885717363!3d45.84286472490113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d692c902cc39%3A0x3a45249628fbc28a!2sZagreb!5e0!3m2!1shr!2shr!4v1755225896186!5m2!1shr!2shr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="split-media">
+  <div class="map-wrap">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d88941.48516228913!2d15.881963885717363!3d45.84286472490113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d692c902cc39%3A0x3a45249628fbc28a!2sZagreb!5e0!3m2!1shr!2shr!4v1755225896186!5m2!1shr!2shr"
+      style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
 </div>
+
       </div>
     </section>
 
