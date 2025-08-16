@@ -15,36 +15,37 @@
   <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
 
   <!-- Header / Navigacija -->
-  <header class="site-header ">
-    <div class="container nav-wrapper">
-      <a href="#" class="logo" aria-label="Početna — Keramika Zagreb">
+  <header class="site-header" role="banner">
+    <div class="container nav-bar">
+      <a href="/" class="logo" aria-label="Početna — Keramika Zagreb">
         <span class="logo-mark">KZ</span>
         <span class="logo-text">Keramika Zagreb</span>
       </a>
 
-<button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Otvori izbornik">
-  <span class="hamb-line" aria-hidden="true"></span>
-  <span class="hamb-line" aria-hidden="true"></span>
-  <span class="hamb-line" aria-hidden="true"></span>
-</button>
+      <nav id="primary-nav" class="site-nav" aria-label="Glavna navigacija" hidden>
+        <ul>
+          <li><a href="#sto-radimo">Što radimo</a></li>
+          <li><a href="#kolekcije">Kolekcije</a></li>
+          <li><a href="#o-nama">O nama</a></li>
+          <li><a href="#projekti">Projekti</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
 
-<nav id="primary-nav" class="site-nav" aria-label="Glavna navigacija">
-  <ul>
-    <li><a href="#sto-radimo">Što radimo</a></li>
-    <li><a href="#kolekcije">Kolekcije</a></li>
-    <li><a href="#o-nama">O nama</a></li>
-    <li><a href="#projekti">Projekti</a></li>
-    <li><a href="#kontakt">Kontakt</a></li>
-  </ul>
-</nav>
-
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Otvori izbornik">
+        <span class="line" aria-hidden="true"></span>
+        <span class="line" aria-hidden="true"></span>
+        <span class="line" aria-hidden="true"></span>
+      </button>
     </div>
+
+    <!-- Klikabilni overlay (zatvara meni) -->
+    <div class="nav-overlay" hidden></div>
   </header>
 
   <main id="sadrzaj">
-
     <!-- HERO -->
-    <section class="hero " aria-label="Hero">
+    <section class="hero" aria-label="Hero">
       <picture>
         <img src="slike/heror.jpg" alt="Moderne keramičke pločice u interijeru" width="1920" height="1080" loading="eager">
       </picture>
@@ -78,7 +79,7 @@
           </article>
 
           <article class="card">
-            <img src="slike/kolekcija2.jpg" alt="Rješenja za arhitekte i izvođače" loading="lazy" width="1400" height="900">
+            <img src="slike/tiler-working-renovation-apartment (2).jpg" alt="Rješenja za arhitekte i izvođače" loading="lazy" width="1400" height="900">
             <div class="card-body">
               <h3>Za arhitekte & izvođače</h3>
               <p>Uzorkovanje, tehničke specifikacije i brendovi za veće projekte.</p>
@@ -92,68 +93,69 @@
               <p>Protuklizne površine i izdržljivi formati za eksterijere.</p>
             </div>
           </article>
+       
         </div>
       </div>
     </section>
 
     <!-- KOLEKCIJE -->
     <section id="kolekcije" class="section fade-in cv">
-  <div class="container">
-    <header class="section-head fade-in">
-      <h2>Istaknute kolekcije</h2>
-      <p class="muted">Naš izbor modernih pločica — za svaki prostor i stil.</p>
-    </header>
+      <div class="container">
+        <header class="section-head fade-in">
+          <h2>Istaknute kolekcije</h2>
+          <p class="muted">Naš izbor modernih pločica — za svaki prostor i stil.</p>
+        </header>
 
-    <div class="grid-3">
-      <article class="tile fade-in">
-        <img src="slike/mramor.jpg" alt="Mramor Lux" loading="lazy" width="1400" height="900">
-        <div class="tile-info">
-          <h3>Mramor Lux</h3>
-          <p>Elegantni uzorci mramora u mat i sjajnoj izvedbi.</p>
-        </div>
-      </article>
+        <div class="grid-3">
+          <article class="tile fade-in">
+            <img src="slike/mramor.jpg" alt="Mramor Lux" loading="lazy" width="1400" height="900">
+            <div class="tile-info">
+              <h3>Mramor Lux</h3>
+              <p>Elegantni uzorci mramora u mat i sjajnoj izvedbi.</p>
+            </div>
+          </article>
 
-      <article class="tile fade-in">
-        <img src="slike/beton.jpg" alt="Beton Siva" loading="lazy" width="1400" height="900">
-        <div class="tile-info">
-          <h3>Beton Siva</h3>
-          <p>Moderan industrijski look za dnevne prostore i kuhinje.</p>
-        </div>
-      </article>
+          <article class="tile fade-in">
+            <img src="slike/beton.jpg" alt="Beton Siva" loading="lazy" width="1400" height="900">
+            <div class="tile-info">
+              <h3>Beton Siva</h3>
+              <p>Moderan industrijski look za dnevne prostore i kuhinje.</p>
+            </div>
+          </article>
 
-      <article class="tile fade-in">
-        <img src="slike/rusticc.jpg" alt="Rustik Smeđa" loading="lazy" width="1400" height="900">
-        <div class="tile-info">
-          <h3>Rustik Smeđa</h3>
-          <p>Pločice toplog tona za ugodnu i domaću atmosferu.</p>
-        </div>
-      </article>
+          <article class="tile fade-in">
+            <img src="slike/rusticc.jpg" alt="Rustik Smeđa" loading="lazy" width="1400" height="900">
+            <div class="tile-info">
+              <h3>Rustik Smeđa</h3>
+              <p>Pločice toplog tona za ugodnu i domaću atmosferu.</p>
+            </div>
+          </article>
 
-      <article class="tile fade-in">
-        <img src="slike/rustic.jpg" alt="Terakota" loading="lazy" width="1400" height="900">
-        <div class="tile-info">
-          <h3>Terakota</h3>
-          <p>Mediteranski šarm u modernoj izvedbi.</p>
-        </div>
-      </article>
+          <article class="tile fade-in">
+            <img src="slike/rustic.jpg" alt="Terakota" loading="lazy" width="1400" height="900">
+            <div class="tile-info">
+              <h3>Terakota</h3>
+              <p>Mediteranski šarm u modernoj izvedbi.</p>
+            </div>
+          </article>
 
-      <article class="tile fade-in">
-        <img src="slike/protu.jpg" alt="Outdoor Protuklizna" loading="lazy" width="1400" height="900">
-        <div class="tile-info">
-          <h3>Outdoor Protuklizna</h3>
-          <p>Sigurnost i izdržljivost za terase i okućnice.</p>
-        </div>
-      </article>
+          <article class="tile fade-in">
+            <img src="slike/protu.jpg" alt="Outdoor Protuklizna" loading="lazy" width="1400" height="900">
+            <div class="tile-info">
+              <h3>Outdoor Protuklizna</h3>
+              <p>Sigurnost i izdržljivost za terase i okućnice.</p>
+            </div>
+          </article>
 
-      <article class="tile fade-in">
-        <img src="slike/mozaik.jpg" alt="Mozaik" loading="lazy" width="1400" height="900">
-        <div class="tile-info">
-          <h3>Mozaik</h3>
-          <p>Kreativni uzorci i boje za kupaonice i kuhinje.</p>
+          <article class="tile fade-in">
+            <img src="slike/mozaik.jpg" alt="Mozaik" loading="lazy" width="1400" height="900">
+            <div class="tile-info">
+              <h3>Mozaik</h3>
+              <p>Kreativni uzorci i boje za kupaonice i kuhinje.</p>
+            </div>
+          </article>
         </div>
-      </article>
-    </div>
-  </div>
+      </div>
     </section>
 
     <!-- O NAMA -->
@@ -182,7 +184,7 @@
           <p class="muted">Mali presjek realizacija — kupaonice, kuhinje i outdoor rješenja.</p>
         </header>
 
-        <div class="grid-3">
+        <div class="cards-3">
           <figure class="proj">
             <img src="slike/kupaonica.jpg" alt="Projekt 1 — kupaonica" loading="lazy" width="1400" height="900">
             <figcaption>Projekt 1 — kupaonica</figcaption>
@@ -221,31 +223,28 @@
             <a class="btn btn-ghost" href="https://whatsapp.com/">Upute do showrooma</a>
           </div>
         </div>
-  <div class="split-media">
-  <div class="map-wrap">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d88941.48516228913!2d15.881963885717363!3d45.84286472490113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d692c902cc39%3A0x3a45249628fbc28a!2sZagreb!5e0!3m2!1shr!2shr!4v1755225896186!5m2!1shr!2shr"
-      style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-</div>
-
+        <div class="split-media">
+          <div class="map-wrap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d88941.48516228913!2d15.881963885717363!3d45.84286472490113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d692c902cc39%3A0x3a45249628fbc28a!2sZagreb!5e0!3m2!1shr!2shr!4v1755225896186!5m2!1shr!2hr"
+              style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
       </div>
     </section>
-
   </main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <p>© <span id="year"></span> Keramika Zagreb — sva prava pridržana.</p>
-    <nav aria-label="Footer">
-      <a href="#">Privatnost</a>
-      <a href="#">Uvjeti korištenja</a>
-    </nav>
-    <p class="made-by">Made by <a href="https://amaterasvv.github.io/stranica/" target="_blank" rel="noopener">Kode Black</a></p>
-  </div>
-</footer>
-
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Keramika Zagreb — sva prava pridržana.</p>
+      <nav aria-label="Footer">
+        <a href="#">Privatnost</a>
+        <a href="#">Uvjeti korištenja</a>
+      </nav>
+      <p class="made-by">Made by <a href="https://amaterasvv.github.io/stranica/" target="_blank" rel="noopener">Kode Black</a></p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

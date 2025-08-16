@@ -1,49 +1,67 @@
-// Mobile nav toggle + body scroll lock + ESC
-const navToggle = document.querySelector('.nav-toggle');
-const siteNav   = document.querySelector('.site-nav');
+// NAV kontrola
+(function(){
+  const navToggle = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('primary-nav');
+  const overlay = document.querySelector('.nav-overlay');
+  const header = document.querySelector('.site-header');
 
-if (navToggle && siteNav) {
+  if(!navToggle || !nav || !overlay) return;
+
+  const openNav = () => {
+    navToggle.setAttribute('aria-expanded', 'true');
+    nav.hidden = false;
+    overlay.hidden = false;
+    nav.classList.add('is-open');
+    document.body.classList.add('nav-open');
+  };
+
   const closeNav = () => {
-    siteNav.classList.remove('open');
-    navToggle.setAttribute('aria-expanded','false');
+    navToggle.setAttribute('aria-expanded', 'false');
+    nav.classList.remove('is-open');
     document.body.classList.remove('nav-open');
+    // pričekaj animaciju pa sakrij elemente iz DOM toka
+    setTimeout(() => { nav.hidden = true; overlay.hidden = true; }, 280);
   };
 
   navToggle.addEventListener('click', () => {
-    const isOpen = siteNav.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-    document.body.classList.toggle('nav-open', isOpen);
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    expanded ? closeNav() : openNav();
   });
 
-  siteNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
-  window.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
-}
+  overlay.addEventListener('click', closeNav);
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeNav(); });
 
+  // Auto-zatvaranje nakon klika na link
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+
+  // Robusno: postavi visinu headera u CSS var (ako se promijeni)
+  const setHeaderH = () => {
+    const h = header ? header.getBoundingClientRect().height : 64;
+    document.documentElement.style.setProperty('--header-h', `${Math.round(h)}px`);
+  };
+  setHeaderH();
+  window.addEventListener('resize', setHeaderH);
+
+  // Header sjena pri scrollu
+  window.addEventListener('scroll', () => {
+    if (header) header.classList.toggle('scrolled', window.scrollY > 10);
+  });
+})();
 
 // Year in footer
-document.getElementById('year').textContent = new Date().getFullYear();
+const y = document.getElementById('year');
+if (y) y.textContent = new Date().getFullYear();
 
-
-// Fade-in on scroll (ranije trigeriranje + manje posla)
+// Fade-in on scroll
 const fadeElems = document.querySelectorAll('.fade-in');
-
-const io = new IntersectionObserver((entries, obs) => {
-  for (const e of entries) {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      obs.unobserve(e.target);
+if (fadeElems.length){
+  const io = new IntersectionObserver((entries, obs) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
     }
-  }
-}, {
-  root: null,
-  rootMargin: '0px 0px -20% 0px', // trigeriraj prije nego uđe skroz
-  threshold: 0
-});
-
-fadeElems.forEach(el => io.observe(el));
-
-// Header bg bez skupog blur-a
-const header = document.querySelector('.site-header');
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 10);
-});
+  }, { root: null, rootMargin: '0px 0px -20% 0px', threshold: 0 });
+  fadeElems.forEach(el => io.observe(el));
+}
