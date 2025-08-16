@@ -163,7 +163,6 @@ body.nav-open{ overflow:hidden; }
 @media (max-width:400px){
   .grid-3{ grid-template-columns:1fr; }
 }
-
 .card, .tile, .proj{
   background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
   overflow:hidden; box-shadow:0 1px 0 rgba(0,0,0,.02);
@@ -238,4 +237,56 @@ body.nav-open{ overflow:hidden; }
 
 @media (prefers-reduced-motion: reduce){
   *{ animation:none !important; transition:none !important; }
+}
+.cards-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* razmak između kartica */
+}
+
+.cards-3 .card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 1px 0 rgba(0,0,0,.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-3 .card img {
+  width: 100%;
+  aspect-ratio: 16/10; /* sve slike iste visine */
+  object-fit: cover;
+}
+
+.cards-3 .card-body {
+  padding: 14px 16px;
+  flex: 1; /* poravnava visine kad je više teksta */
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-3 .card h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+}
+
+.cards-3 .card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Responsivnost */
+@media (max-width: 960px) {
+  .cards-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-3 {
+    grid-template-columns: 1fr;
+  }
 }
